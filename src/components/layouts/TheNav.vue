@@ -3,21 +3,12 @@
         <div class="container">
             <div id="navigation">
                 <ul class="navigation-menu">
-
-                    <li class="has-submenu">
-                        <a href="#"><i class="fi-air-play"></i>首页</a>
-                    </li>
-
-                    <li class="has-submenu">
-                        <a href="#"><i class="fi-briefcase"></i>设备列表</a>
-                    </li>
-
-                    <li class="has-submenu">
-                        <a href="#"><i class="fi-box"></i>保养信息</a>
-                    </li>
-
-                    <li class="has-submenu">
-                        <a href="#"><i class="fi-paper"></i>报警信息</a>
+                    <li class="has-submenu" v-for="(item, index) in navList"
+                        :class="{ active: index === activeNavIndex }"
+                    >
+                        <router-link v-bind:to="item.routeName" @click="changeNavIndex(index)">
+                            <i class="fi-air-play"></i>{{ item.title }}
+                        </router-link>
                     </li>
                 </ul>
             </div>
@@ -28,6 +19,34 @@
 <script>
     export default {
         name: 'TheNav',
+        data() {
+            return {
+                navList: [
+                    {
+                        title: '首页',
+                        routeName: '/',
+                    },
+                    {
+                        title: '设备管理',
+                        routeName: '/DeviceList',
+                    },
+                    {
+                        title: '报警管理',
+                        routeName: '/WarningList',
+                    },
+                    {
+                        title: '保养管理',
+                        routeName: '/MaintainList',
+                    },
+                ],
+                activeNavIndex: 0
+            }
+        },
+        methods: {
+            changeNavIndex(index) {
+                this.activeNavIndex = index
+            }
+        }
     }
 </script>
 

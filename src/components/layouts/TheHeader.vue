@@ -9,7 +9,7 @@
                 <!--Adminox-->
                 <!--</a>-->
                 <!-- Image Logo -->
-                <router-link to="/Home" class="logo">
+                <router-link to="/" class="logo">
                     <img :src="logo_dark.src" alt="" height="24" class="logo-lg">
                     <img :src="logo.src" alt="" height="24" class="logo-sm">
                 </router-link>
