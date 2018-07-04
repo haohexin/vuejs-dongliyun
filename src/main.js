@@ -5,6 +5,12 @@ import App from './App'
 // 如果引入的是 index.js，可以使用下面的简写，等价于 import router from './router/index.js'
 import router from './router'
 
+// 引入公共样式
+import './assets/css/bootstrap.min.css'
+import './assets/css/metismenu.min.css'
+import './assets/css/style.css'
+import './assets/css/icons.css'
+
 // 设置 false 以阻止 Vue 在启动时生成生产提示
 Vue.config.productionTip = false
 
@@ -14,6 +20,6 @@ Vue.config.productionTip = false
 new Vue({
     el: '#app',
     router,
-    components: { App },
+    components: {App},
     template: '<App/>'
 })

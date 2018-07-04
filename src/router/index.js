@@ -1,12 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// 引入公共样式
-import '../assets/css/bootstrap.min.css'
-import '../assets/css/metismenu.min.css'
-import '../assets/css/style.css'
-import '../assets/css/icons.css'
-
 // 引入 ./routes.js 的默认值
 import routes from './routes'
 

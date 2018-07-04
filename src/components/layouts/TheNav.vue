@@ -3,20 +3,11 @@
         <div class="container">
             <div id="navigation">
                 <ul class="navigation-menu">
-                    <!--<li class="has-submenu" v-for="(item, index) in navList"-->
-                    <!--v-bind:class="{ active: index === activeNavIndex }"-->
-                    <!--&gt;-->
-                    <!--<router-link v-bind:to="item.routeName"-->
-                    <!--:to="{path:item.routeName,query:{item:index}}"-->
-                    <!--@click="changeNavIndex(index)">-->
-                    <!--<i class="fi-air-play"></i>{{ item.title }}-->
-                    <!--</router-link>-->
-                    <!--</li>-->
-
                     <router-link tag="li"
                                  class="has-submenu"
-                                 v-for="(item) in navList"
-                                 v-bind:to="item.routeName"
+                                 v-for="(item,idx) in navList"
+                                 :key="idx"
+                                 :to="item.routeName"
                                  active-class="active"
                                  exact
                     >
@@ -36,7 +27,7 @@
                 navList: [
                     {
                         title: '首页',
-                        routeName: '/',
+                        routeName: '/Home',
                     },
                     {
                         title: '设备管理',
