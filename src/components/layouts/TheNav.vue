@@ -3,13 +3,25 @@
         <div class="container">
             <div id="navigation">
                 <ul class="navigation-menu">
-                    <li class="has-submenu" v-for="(item, index) in navList"
-                        :class="{ active: index === activeNavIndex }"
+                    <!--<li class="has-submenu" v-for="(item, index) in navList"-->
+                    <!--v-bind:class="{ active: index === activeNavIndex }"-->
+                    <!--&gt;-->
+                    <!--<router-link v-bind:to="item.routeName"-->
+                    <!--:to="{path:item.routeName,query:{item:index}}"-->
+                    <!--@click="changeNavIndex(index)">-->
+                    <!--<i class="fi-air-play"></i>{{ item.title }}-->
+                    <!--</router-link>-->
+                    <!--</li>-->
+
+                    <router-link tag="li"
+                                 class="has-submenu"
+                                 v-for="(item) in navList"
+                                 v-bind:to="item.routeName"
+                                 active-class="active"
+                                 exact
                     >
-                        <router-link v-bind:to="item.routeName" @click="changeNavIndex(index)">
-                            <i class="fi-air-play"></i>{{ item.title }}
-                        </router-link>
-                    </li>
+                        <a><i class="fi-air-play"></i>{{ item.title }}</a>
+                    </router-link>
                 </ul>
             </div>
         </div>
@@ -39,14 +51,8 @@
                         routeName: '/MaintainList',
                     },
                 ],
-                activeNavIndex: 0
             }
         },
-        methods: {
-            changeNavIndex(index) {
-                this.activeNavIndex = index
-            }
-        }
     }
 </script>
 

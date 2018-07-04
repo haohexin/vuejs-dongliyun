@@ -16,7 +16,7 @@
                                     <li class="breadcrumb-item active">Dashboard</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Dashboard</h4>
+                            <h4 class="page-title">首页</h4>
                         </div>
                     </div>
                 </div>
