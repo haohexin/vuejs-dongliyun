@@ -10,9 +10,9 @@ export default [
         component: () => import('@/views/auth/Login')
     },
     {
-        path: '/Main',
-        name: 'Main',
-        component: () => import('@/views/Main'),
+        path: '/TheMain',
+        name: 'TheMain',
+        component: () => import('@/components/layouts/TheMain'),
         children: [
             {
                 path: '/Home',
