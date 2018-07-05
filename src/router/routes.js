@@ -34,6 +34,11 @@ export default [
                 name: 'MaintainList',
                 component: () => import('@/views/MaintainList')
             },
+            {
+                path: '/EditProfile',
+                name: 'EditProfile',
+                component: () => import('@/views/EditProfile')
+            },
         ]
     },
 ]
